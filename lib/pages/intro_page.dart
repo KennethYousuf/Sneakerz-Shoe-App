@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sneakerz/pages/home.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -21,18 +22,36 @@ class IntroPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 55.0),
-              child: Text(
-                "SNEAKERZ",
-                style: GoogleFonts.anton(
-                    color: Colors.black,
-                    fontSize: 70,
-                    fontWeight: FontWeight.bold),
+              padding: const EdgeInsets.only(left: 65.0),
+              child: Row(
+                children: [
+                  Text(
+                    "SNEA",
+                    style: GoogleFonts.anton(
+                        color: Colors.black,
+                        fontSize: 70,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "K",
+                    style: GoogleFonts.anton(
+                        color: Colors.red,
+                        fontSize: 70,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "ERZ",
+                    style: GoogleFonts.anton(
+                        color: Colors.black,
+                        fontSize: 70,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(
-                left: 55.0,
+                left: 8.0,
               ),
               child: Text(
                 "Brand new sneakers and custom kicks with premium quality ",
@@ -43,6 +62,17 @@ class IntroPage extends StatelessWidget {
               ),
             ),
           ],
+        ),
+        Container(
+          alignment: Alignment.bottomCenter,
+          child: TextButton(
+            onPressed: () { Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Home()));},
+            child: Text(
+              "Shop Now",
+              style: GoogleFonts.anton(color: Colors.black, fontSize: 18),
+            ),
+          ),
         )
       ]),
     );
