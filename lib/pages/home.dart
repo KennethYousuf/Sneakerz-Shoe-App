@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -17,8 +17,26 @@ class _HomeState extends State<Home> {
       backgroundColor: Colors.white,
       appBar: AppBar(
       backgroundColor: Colors.white,
-      leading: Icon(Icons.menu,
-      color: Colors.black,),
+      leading: IconButton(
+        onPressed: () {
+          
+        },
+        icon: Icon(Icons.menu_rounded,
+        color: Colors.black,),
+      ),
+      actions: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+              Icon(Icons.home,
+            color: Colors.black,
+            ),
+            Icon(Icons.shopping_bag_rounded,
+            color: Colors.black,
+            ),
+          ],
+        )
+      ],
         title:Row(
           mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -45,6 +63,7 @@ class _HomeState extends State<Home> {
                   ),
                 ],
               ),),
+             
     );
   }
 }
