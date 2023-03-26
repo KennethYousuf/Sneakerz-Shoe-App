@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sneakerz/pages/home.dart';
 import 'package:sneakerz/pages/intro_page.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
-      home:IntroPage(),
+      home:Home(),
     );
   }
 }

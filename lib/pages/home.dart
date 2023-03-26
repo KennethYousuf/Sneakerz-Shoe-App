@@ -68,6 +68,44 @@ class _HomeState extends State<Home> {
       ),
       drawer: Drawer(
         backgroundColor: Colors.grey[350],
+        child: Column(children: [
+          DrawerHeader(
+
+              child: Text(
+                'Categories',
+              style:  GoogleFonts.anton(
+                  color: Colors.black,
+                   fontSize: 28,
+                    fontWeight: FontWeight.normal),),),
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Divider(
+                  color: Colors.grey,
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.only(left:10.0),
+                child: ListTile(
+                title: Text("Men",
+                style: GoogleFonts.anton(
+                  color: Colors.black,
+                  fontSize: 18
+                ),),
+                ),
+              ),
+               Padding(
+                padding: const EdgeInsets.only(left:10.0),
+                child: ListTile(
+                title: Text("Women",
+                style: GoogleFonts.anton(
+                  color: Colors.black,
+                  fontSize: 18
+                ),),
+                ),
+              )
+        ]),
       ),
     );
   }
