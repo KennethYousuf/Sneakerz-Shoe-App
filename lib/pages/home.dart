@@ -146,6 +146,24 @@ class _HomeState extends State<Home> {
                 color: Colors.black,),
               ],
             ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal:25.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Top Products",
+                style: GoogleFonts.anton(
+                  color: Colors.black,
+                  fontSize: 20
+                ),),
+                Text("See all",
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontWeight: FontWeight.bold
+                ),)
+              ],
+            ),
           )
         ],
       ),
