@@ -16,7 +16,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.white38,
         leading: Builder(builder: (context) {
           return IconButton(
             onPressed: () {
@@ -177,10 +177,22 @@ class _HomeState extends State<Home> {
                         price: "5999",
                         imagepath: "images/nike1.jpg",
                         description: "Cool Athletic Shoe");
+                    
                     return ShoeTile(
                       shoe: shoe,
                     );
-                  }))
+                  })),
+
+                  const Padding(
+                    padding: const EdgeInsets.only(
+                      top:35.0,
+                      right: 35,
+                      left: 35),
+                    child: Divider(
+                      color: Colors.white,
+                    ),
+                  )
+                
         ],
       ),
     );
