@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sneakerz/components/shoe_tile.dart';
+import 'package:sneakerz/model/shoe.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -130,41 +132,55 @@ class _HomeState extends State<Home> {
         children: [
           Container(
             padding: EdgeInsets.all(12),
-            margin: EdgeInsets.symmetric(horizontal: 25,vertical: 15),
-            
+            margin: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              color: Colors.grey[300]),
+                borderRadius: BorderRadius.circular(8),
+                color: Colors.grey[300]),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-
-                Text("Search",
-                style: TextStyle(
-                  color: Colors.black),),
-                Icon(Icons.search_rounded,
-                color: Colors.black,),
+                Text(
+                  "Search",
+                  style: TextStyle(color: Colors.black),
+                ),
+                Icon(
+                  Icons.search_rounded,
+                  color: Colors.black,
+                ),
               ],
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal:25.0),
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Top Products",
-                style: GoogleFonts.anton(
-                  color: Colors.black,
-                  fontSize: 20
-                ),),
-                Text("See all",
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontWeight: FontWeight.bold
-                ),)
+                Text(
+                  "Top Products",
+                  style: GoogleFonts.anton(color: Colors.black, fontSize: 20),
+                ),
+                Text(
+                  "See all",
+                  style: TextStyle(
+                      color: Colors.blue, fontWeight: FontWeight.bold),
+                )
               ],
             ),
-          )
+          ),
+          Expanded(
+              child: ListView.builder(
+                  itemCount: 4,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    Shoe shoe = Shoe(
+                        name: "Nike Athletic",
+                        price: "5999",
+                        imagepath: "images/nike1.jpg",
+                        description: "Cool Athletic Shoe");
+                    return ShoeTile(
+                      shoe: shoe,
+                    );
+                  }))
         ],
       ),
     );
