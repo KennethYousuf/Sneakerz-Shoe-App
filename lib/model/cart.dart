@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:sneakerz/model/shoe.dart';
 
-class Cart {
+class Cart extends ChangeNotifier {
   //list of shoes for sale
 
   List<Shoe> shoeShop = [
@@ -42,9 +43,12 @@ class Cart {
   //add items to cart
   void addItemsToCart(Shoe shoe) {
     userCart.add(shoe);
+    notifyListeners();
   }
+
   //remove from cart
   void removeItemsToCart(Shoe shoe) {
     userCart.remove(shoe);
+    notifyListeners();
   }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:sneakerz/model/cart.dart';
 import 'package:sneakerz/pages/home.dart';
 import 'package:sneakerz/pages/intro_page.dart';
 
@@ -12,12 +14,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData.dark(),
-      debugShowCheckedModeBanner: false,
-      home:Home(),
-    );
+    return ChangeNotifierProvider(
+      create: (context) => Cart(),
+      builder: (context, child) => const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Home(),
+        
+      ),);
   }
 }
-
