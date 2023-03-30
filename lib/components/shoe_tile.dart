@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sneakerz/model/shoe.dart';
 
@@ -14,7 +12,7 @@ class ShoeTile extends StatelessWidget {
       margin: EdgeInsets.only(left: 25),
       width: 280,
       decoration: BoxDecoration(
-          color: Colors.grey[100], borderRadius: BorderRadius.circular(12)),
+          color: Colors.grey[50], borderRadius: BorderRadius.circular(12)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -22,11 +20,7 @@ class ShoeTile extends StatelessWidget {
           ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Image.asset(shoe.imagepath)),
-          //description
-          Text(
-            shoe.description,
-            style: GoogleFonts.aBeeZee(color: Colors.black26),
-          ),
+          
           Padding(
             padding: const EdgeInsets.only(left:25.0),
             child: Row(
@@ -43,7 +37,7 @@ class ShoeTile extends StatelessWidget {
                     fontSize: 20,
                     fontWeight: FontWeight.bold
                   ),),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   Text(

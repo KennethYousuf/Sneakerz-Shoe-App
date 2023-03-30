@@ -176,7 +176,7 @@ class _HomeState extends State<Home> {
                         name: "Nike Athletic",
                         price: "5999",
                         imagepath: "images/nike1.jpg",
-                        description: "Cool Athletic Shoe");
+                      );
                     
                     return ShoeTile(
                       shoe: shoe,
