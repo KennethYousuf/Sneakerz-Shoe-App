@@ -16,6 +16,16 @@ class _HomeState extends State<Home> {
   //add shoe to cart
   void addShoeToCart(Shoe shoe) {
     Provider.of<Cart>(context, listen: false).addItemsToCart(shoe);
+
+    // alert msg on adding shoe to cart
+    showDialog(
+        context: context,
+        builder: (context) =>
+          AlertDialog(
+            title: Text("Successfully Added!"),
+            content: Text("Check your cart"),
+          )
+        );
   }
 
   @override
@@ -189,7 +199,7 @@ class _HomeState extends State<Home> {
 
                         return ShoeTile(
                           shoe: shoe,
-                          onTap: () => addShoeToCart(individualShoe),
+                          onTap: () => addShoeToCart(shoe),
                         );
                       })),
 
