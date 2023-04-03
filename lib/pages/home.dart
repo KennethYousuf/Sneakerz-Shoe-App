@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:sneakerz/components/shoe_tile.dart';
 import 'package:sneakerz/model/cart.dart';
 import 'package:sneakerz/model/shoe.dart';
+import 'package:sneakerz/pages/cart_page.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -49,13 +50,25 @@ class _HomeState extends State<Home> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Icon(
-                  Icons.home,
-                  color: Colors.black,
+                IconButton(
+                  onPressed: () => Navigator.push(
+                                      context,
+                  MaterialPageRoute(builder: (context) => const Home()),
+                  ), icon: Icon(
+                    Icons.home_outlined,
+                    color: Colors.black,
+                  ),
+                 
                 ),
-                Icon(
-                  Icons.shopping_bag_rounded,
-                  color: Colors.black,
+                 IconButton(
+                  onPressed: () => Navigator.push(
+                                      context,
+                  MaterialPageRoute(builder: (context) => CartPage()),
+                  ), icon: Icon(
+                    Icons.shopping_bag_outlined,
+                    color: Colors.black,
+                  ),
+                 
                 ),
               ],
             )
@@ -96,11 +109,11 @@ class _HomeState extends State<Home> {
                   children: [
                     DrawerHeader(
                       child: Text(
-                        'CATEGORIES',
+                        'SNEAKERZ',
                         style: GoogleFonts.aboreto(
                             color: Colors.black,
                             fontSize: 28,
-                            fontWeight: FontWeight.bold),
+                            fontWeight: FontWeight.w900),
                       ),
                     ),
                     Padding(
@@ -113,7 +126,7 @@ class _HomeState extends State<Home> {
                       padding: const EdgeInsets.only(left: 10.0),
                       child: ListTile(
                         title: Text(
-                          "Men",
+                          "Home",
                           style: GoogleFonts.aBeeZee(
                               color: Colors.black, fontSize: 18),
                         ),
@@ -123,7 +136,7 @@ class _HomeState extends State<Home> {
                       padding: const EdgeInsets.only(left: 10.0),
                       child: ListTile(
                         title: Text(
-                          "Women",
+                          "About",
                           style: GoogleFonts.aBeeZee(
                               color: Colors.black, fontSize: 18),
                         ),
@@ -191,8 +204,8 @@ class _HomeState extends State<Home> {
               // List of shoes
               Expanded(
                   child: ListView.builder(
-                      itemCount: 4,
-                      scrollDirection: Axis.horizontal,
+                      itemCount: 5,
+                      scrollDirection: Axis.vertical,
                       itemBuilder: (context, index) {
                         //get a shoe from shop list
                         Shoe shoe = value.getShoeList()[index];
@@ -204,7 +217,7 @@ class _HomeState extends State<Home> {
                       })),
 
               const Padding(
-                padding: const EdgeInsets.only(top: 35.0, right: 35, left: 35),
+                padding: const EdgeInsets.only(top: 25.0, right: 35, left: 35),
                 child: Divider(
                   color: Colors.white,
                 ),

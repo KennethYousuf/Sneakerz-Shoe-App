@@ -13,17 +13,22 @@ class Cart extends ChangeNotifier {
     Shoe(
       name: 'Nike Neon',
       price: 'Rs 7999',
-      imagepath: "images/nike2.jpg",
+      imagepath: "images/nike2.png",
     ),
     Shoe(
       name: 'Nike Neon',
       price: 'Rs 7999',
-      imagepath: "images/nike3.jpg",
+      imagepath: "images/nike3.png",
     ),
     Shoe(
       name: 'Nike Neon',
       price: 'Rs 7999',
-      imagepath: "images/nike4.jpg",
+      imagepath: "images/nike4.png",
+    ),
+     Shoe(
+      name: 'Nike Neon',
+      price: 'Rs 7999',
+      imagepath: "images/air.png",
     ),
   ];
 
